@@ -46,6 +46,24 @@ fn main() {
     assert_eq!("HEAD", HTTPMethod::HEAD.enum_to_str());
     assert_eq!("POST", HTTPMethod::POST.enum_to_str());
 }
+```
 
+# Other Way (which means I'm stupid)
 
+```rust
+#[derive(Debug)]
+enum HTTPMethod {
+    GET,
+    HEAD,
+    POST,
+    PUT,
+    DELETE,
+    CONNECT,
+    OPTIONS,
+    TRACE
+}
+
+fn main() {
+    assert_eq!("GET", format!("{:?}", HTTPMethod::GET));
+}
 ```
