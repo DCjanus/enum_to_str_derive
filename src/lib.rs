@@ -33,10 +33,11 @@ fn impl_enum_to_str(name: &syn::Ident, body: Vec<syn::Variant>) -> quote::Tokens
 }
 
 fn build_content(name: &syn::Ident, body: Vec<syn::Variant>) -> syn::Ident {
-    let lines: Vec<String> = body.iter()
+    body.iter()
         .map(|field| format!("{enum_name}::{field} => \"{field}\"",
                              field = field.ident,
                              enum_name = name))
-        .collect();
-    syn::Ident::from(lines.join(","))
+        .collect::<Vec<String>>()
+        .join(",")
+        .into()
 }
