@@ -4,7 +4,17 @@ version = "0.1.0"
 authors = ["DCjanus <1102035688@qq.com>"]
 description = "provide a simple way to convert enum to static str ref"
 repository = "https://github.com/DCjanus/enum_to_str_derive"
+documentation = "https://docs.rs/enum_to_str_derive"
 license = "BSD-3-Clause"
+readme = "README.MD"
+exclude = [
+    ".gitignore",
+    "pre-commit",
+    "README.MD",
+    "rustfmt.toml",
+    "tests/*",
+    ".travis.yml",
+]
 
 [dependencies]
 syn = "0.11.11"
