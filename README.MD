@@ -1,4 +1,4 @@
-[![Travis branch](https://img.shields.io/badge/rustc-1.15%20or%20later-brightgreen.svg)](https://www.rust-lang.org/)
+[![Travis branch](https://img.shields.io/badge/rustc-1.26%20or%20later-brightgreen.svg)](https://www.rust-lang.org/)
 [![Latest Version](https://img.shields.io/crates/v/enum_to_str_derive.svg)](https://crates.io/crates/enum_to_str_derive)
 [![Travis branch](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
