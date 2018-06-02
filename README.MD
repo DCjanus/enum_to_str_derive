@@ -8,7 +8,7 @@
 
 ```toml
 [dependencies]
-enum_to_str_derive = "0.1"
+enum_to_str_derive = "0.2"
 ``` 
 
 `main.rs`
@@ -18,41 +18,18 @@ enum_to_str_derive = "0.1"
 extern crate enum_to_str_derive;
 
 #[derive(EnumToStr)]
-enum HTTPMethod {
-    GET,
-    HEAD,
-    POST,
-    PUT,
-    DELETE,
-    CONNECT,
-    OPTIONS,
-    TRACE
+enum Foo {
+    Foo,
+    #[ETS(value = r#"Can you please tell me what does "foo" mean"#)]
+    Question,
 }
 
 fn main() {
-    assert_eq!("GET", HTTPMethod::GET.enum_to_str());
-    assert_eq!("HEAD", HTTPMethod::HEAD.enum_to_str());
-    assert_eq!("POST", HTTPMethod::POST.enum_to_str());
-}
-```
-
-# Other Way (which means I'm stupid)
-
-```rust
-#[derive(Debug)]
-enum HTTPMethod {
-    GET,
-    HEAD,
-    POST,
-    PUT,
-    DELETE,
-    CONNECT,
-    OPTIONS,
-    TRACE
-}
-
-fn main() {
-    assert_eq!("GET", format!("{:?}", HTTPMethod::GET));
+    debug_assert_eq!("Foo", Foo::Foo.enum_to_str());
+    debug_assert_eq!(
+        r#"Can you please tell me what does "foo" mean"#,
+        Foo::Question.enum_to_str()
+    );
 }
 ```
 
