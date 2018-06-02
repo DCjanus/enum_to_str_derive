@@ -1,18 +1,6 @@
-[![Travis branch](https://img.shields.io/badge/rustc-nightly%20only-brightgreen.svg)](https://www.rust-lang.org/)
+[![Travis branch](https://img.shields.io/badge/rustc-1.15%20or%20later-brightgreen.svg)](https://www.rust-lang.org/)
 [![Latest Version](https://img.shields.io/crates/v/enum_to_str_derive.svg)](https://crates.io/crates/enum_to_str_derive)
 [![Travis branch](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-
-I was going to write a simple HTTP client library.
-
-There is an enum, which called `HTTPMethod`, for building a HTTP request message, I have to convert the enum to str.
-
-Without macro, I have to write a lot of pattern match expressions, I believe there will be many typos.
-
-I think it sucks! So I learned the `ProcMacro` and write this lib.
-
-# warning
-
-Because of `proc-macro`, this lib is **nightly** only(1.22).
 
 # example
 
@@ -20,7 +8,7 @@ Because of `proc-macro`, this lib is **nightly** only(1.22).
 
 ```toml
 [dependencies]
-enum_to_str_derive = "0.1.0"
+enum_to_str_derive = "0.1"
 ``` 
 
 `main.rs`
@@ -67,3 +55,8 @@ fn main() {
     assert_eq!("GET", format!("{:?}", HTTPMethod::GET));
 }
 ```
+
+# TODO
+
++ [x] add attribute: `value`
++ [ ] add attribute: `handler`
