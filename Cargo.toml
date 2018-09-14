@@ -1,6 +1,6 @@
 [package]
 name = "enum_to_str_derive"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["DCjanus <1102035688@qq.com>"]
 description = "provide a simple way to convert enum to static str ref"
 repository = "https://github.com/DCjanus/enum_to_str_derive"
@@ -17,9 +17,9 @@ exclude = [
 ]
 
 [dependencies]
-syn = { version = "0.14", features = ["extra-traits"] }
+syn = { version = "0.15", features = ["extra-traits"] }
 quote = "0.6"
-proc_macro_helper = "0.2"
+proc_macro_helper = "0.3"
 
 [lib]
 proc-macro = true
