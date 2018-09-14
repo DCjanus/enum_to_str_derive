@@ -1,24 +1,25 @@
 language: rust
 notifications:
-  notifications:
+  email:
     on_success: never
     on_failure: always
 rust:
-  - stable
-  - beta
-  - nightly
-  - 1.26.1
+- stable
+- beta
+- nightly
 matrix:
   allow_failures:
-    - rust: nightly
+  - rust: nightly
   fast_finish: true
-cache: cargo
+cache:
+  directories:
+  - /home/travis/.cargo
+
 before_script:
-  - rustup update nightly
-  - rustup component add rustfmt-preview --toolchain nightly
+- rm -rf /home/travis/.cargo/registry
+- rustup update nightly
+- rustup component add rustfmt-preview clippy-preview --toolchain nightly
 script:
-  - cargo +nightly fmt --all -- --check
-  - cargo test --verbose --all
-addons:
-  apt:
-    update: true
+- cargo +nightly fmt --all -- --check
+- cargo +nightly clippy
+- cargo test --verbose --all
